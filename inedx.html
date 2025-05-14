@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>village</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pakkadappuraya - Discover the Beauty of Our Village</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>
+        tailwind.config={
+            theme:{
+                extend:{
+                    colors:{
+                        primary:'#8B6D43',
+                        secondary:'#4A6741'
+                    },
+                    borderRadius:{
+                        'none':'0px',
+                        'sm':'4px',
+                        DEFAULT:'8px',
+                        'md':'12px',
+                        'lg':'16px',
+                        'xl':'20px',
+                        '2xl':'24px',
+                        '3xl':'32px',
+                        'full':'9999px',
+                        'button':'8px'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        :where([class^="ri-"])::before { content: "\f3c2"; }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #333;
+        }
+        
+        .hero-section {
+            background-image: url('https://readdy.ai/api/search-image?query=Beautiful%20traditional%20Kerala%20village%20landscape%20with%20lush%20green%20paddy%20fields%2C%20coconut%20trees%2C%20traditional%20houses%20with%20sloped%20roofs%2C%20small%20water%20bodies%2C%20and%20mountains%20in%20the%20background.%20Warm%20golden%20sunset%20light%2C%20peaceful%20rural%20atmosphere%2C%20high%20quality%20professional%20photography&width=1920&height=1080&seq=1&orientation=landscape');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+        
+        .hero-overlay {
+            background: linear-gradient(to right, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0.1) 100%);
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: #8B6D43;
+            transition: width 0.3s;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .attraction-card {
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .attraction-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .gallery-item {
+            overflow: hidden;
+            cursor: pointer;
+        }
+        
+        .gallery-item img {
+            transition: transform 0.5s;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+        
+        input[type="text"], 
+        input[type="email"], 
+        textarea {
+            border: 1px solid #e2e8f0;
+            transition: border-color 0.3s;
+        }
+        
+        input[type="text"]:focus, 
+        input[type="email"]:focus, 
+        textarea:focus {
+            border-color: #8B6D43;
+            outline: none;
+        }
+        
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 50;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+        }
+        
+        .modal-content {
+            margin: auto;
+            display: block;
+            max-width: 80%;
+            max-height: 80%;
+        }
+        
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: white;
+            font-size: 40px;
+            cursor: pointer;
+        }
+        /* From Uiverse.io by Saad3092003 */ 
+button {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  outline: none;
+  border: 0;
+  vertical-align: middle;
+  text-decoration: none;
+  background: transparent;
+  padding: 0;
+  font-size: inherit;
+  font-family: inherit;
+}
+
+button.learn-more {
+  width: 12rem;
+  height: auto;
+}
+
+button.learn-more .circle {
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  box-shadow: 0 0 5px 1px white;
+  position: relative;
+  display: block;
+  margin: 0;
+  width: 3rem;
+  height: 3rem;
+  background: #282936;
+  border-radius: 1.625rem;
+}
+
+button.learn-more .circle .icon {
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  background: #fff;
+}
+
+button.learn-more .circle .icon.arrow {
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  left: 0.625rem;
+  width: 1.125rem;
+  height: 0.125rem;
+  background: none;
+}
+
+button.learn-more .circle .icon.arrow::before {
+  position: absolute;
+  content: "";
+  top: -0.29rem;
+  right: 0.0625rem;
+  width: 0.625rem;
+  height: 0.625rem;
+  border-top: 0.125rem solid #fff;
+  border-right: 0.125rem solid #fff;
+  transform: rotate(45deg);
+}
+
+button.learn-more .button-text {
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 0.75rem 0;
+  margin: 0 0 0 1.85rem;
+  color: rgba(255, 255, 255, 0.493);
+  font-weight: 700;
+  line-height: 1.6;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+button:hover .circle {
+  width: 100%;
+  box-shadow: 0 0 10px 2px white;
+}
+
+button:hover .button-text {
+  transform: translate(-1.7rem, 0);
+}
+
+button:hover .circle .icon.arrow {
+  background: #fff;
+  transform: translate(8.7rem, 0);
+}
+
+button:active .circle .icon.arrow {
+  transform: translate(9.5rem, 0);
+  transition: all 0.3s;
+}
+
+button:active .circle {
+  transform: scale(0.9);
+  transition: all 0.3s;
+  box-shadow: 0 0 5px 0.5px white;
+}
+
+button:hover .button-text {
+  color: #fff;
+}
+
+button:active .button-text {
+  color: rgba(255, 255, 255, 0.459);
+}
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md fixed w-full z-10">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex justify-between items-center">
+                <a href="#" class="text-2xl font-['Pacifico'] text-primary">Pakkadappuraya</a>
+                
+                <div class="hidden md:flex space-x-8">
+                    <a href="#" class="nav-link text-gray-800 hover:text-primary">Home</a>
+                    <a href="#about" class="nav-link text-gray-800 hover:text-primary">About</a>
+                    <a href="#attractions" class="nav-link text-gray-800 hover:text-primary">Attractions</a>
+                    <a href="#gallery" class="nav-link text-gray-800 hover:text-primary">Gallery</a>
+                    <a href="#contact" class="nav-link text-gray-800 hover:text-primary">Contact</a>
+                </div>
+                
+                <div class="md:hidden w-10 h-10 flex items-center justify-center cursor-pointer" id="mobile-menu-button">
+                    <i class="ri-menu-line text-xl"></i>
+                </div>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div class="md:hidden hidden" id="mobile-menu">
+                <div class="flex flex-col space-y-4 py-4">
+                    <a href="#" class="text-gray-800 hover:text-primary">Home</a>
+                    <a href="#about" class="text-gray-800 hover:text-primary">About</a>
+                    <a href="#attractions" class="text-gray-800 hover:text-primary">Attractions</a>
+                    <a href="#gallery" class="text-gray-800 hover:text-primary">Gallery</a>
+                    <a href="#contact" class="text-gray-800 hover:text-primary">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section h-screen flex items-center">
+        <div class="hero-overlay w-full h-full absolute"></div>
+        <div class="container mx-auto px-4 relative z-1">
+            <div class="max-w-2xl text-white">
+                <h1 class="text-5xl font-bold mb-4">Welcome To Pakkadappuraya   </h1>
+                <p class="text-xl mb-8">Discover the untouched beauty and rich cultural heritage of Pakkadappuraya, where tradition meets nature in perfect harmony.</p>
+                <!-- From Uiverse.io by Saad3092003 --> 
+           <button class="learn-more">
+            <span aria-hidden="true" class="circle">
+            <span class="icon arrow"></span>
+            </span>
+            <span class="button-text">Learn More</span>
+</button> 
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-800 mb-2">Welcome to Pakkadappuraya</h2>
+                <div class="w-24 h-1 bg-primary mx-auto"></div>
+            </div>
+            
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="md:w-1/2">
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-4">A Hidden Gem in Kerala</h3>
+                    <p class="text-gray-700 mb-4">Nestled amidst the lush green landscapes of Kerala, Pakkadappuraya is a picturesque village that offers visitors a glimpse into the authentic rural life of God's Own Country. With its pristine paddy fields, coconut groves, and traditional architecture, our village stands as a testament to Kerala's rich cultural heritage.</p>
+                    <p class="text-gray-700 mb-6">The name "Pakkadappuraya" derives from the Malayalam words meaning "neighboring kitchen," reflecting our community's warm hospitality and the importance of shared meals in our culture. For generations, our village has preserved traditional farming methods, art forms, and culinary practices that visitors can experience firsthand.</p>
+                    <button class="bg-primary hover:bg-opacity-90 text-white px-6 py-2 rounded-button font-medium whitespace-nowrap">Learn More About Us</button>
+                </div>
+                <div class="md:w-1/2">
+                    <img src="https://readdy.ai/api/search-image?query=Traditional%20Kerala%20village%20house%20with%20wooden%20architecture%2C%20sloped%20tiled%20roof%2C%20courtyard%20with%20plants%20and%20flowers%2C%20surrounded%20by%20coconut%20trees%2C%20bright%20natural%20lighting%2C%20authentic%20rural%20setting%2C%20high-resolution%20professional%20photography&width=600&height=500&seq=2&orientation=landscape" alt="Traditional Kerala Village" class="rounded-lg shadow-lg w-full h-auto object-cover">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Attractions Section -->
+    <section id="attractions" class="py-20 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-800 mb-2">Village Attractions</h2>
+                <div class="w-24 h-1 bg-primary mx-auto mb-4"></div>
+                <p class="text-gray-700 max-w-2xl mx-auto">Discover the unique experiences that make Pakkadappuraya a must-visit destination for travelers seeking authentic cultural immersion.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Attraction 1 -->
+                <div class="attraction-card bg-white rounded-lg overflow-hidden shadow-md">
+                    <img src="https://readdy.ai/api/search-image?query=Traditional%20Kerala%20paddy%20fields%20with%20farmers%20working%2C%20lush%20green%20landscape%2C%20water%20reflections%2C%20golden%20sunlight%2C%20rural%20agricultural%20scene%2C%20authentic%20farming%20methods%2C%20high-resolution%20professional%20photography&width=400&height=300&seq=3&orientation=landscape" alt="Traditional Farming" class="w-full h-64 object-cover object-top">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Traditional Farming Experience</h3>
+                        <p class="text-gray-700 mb-4">Join local farmers in their daily activities, from paddy planting to harvesting. Learn ancient agricultural techniques that have been passed down through generations.</p>
+                        <button class="bg-primary hover:bg-opacity-90 text-white px-4 py-2 rounded-button font-medium whitespace-nowrap">Learn More</button>
+                    </div>
+                </div>
+                
+                <!-- Attraction 2 -->
+                <div class="attraction-card bg-white rounded-lg overflow-hidden shadow-md">
+                    <img src="https://readdy.ai/api/search-image?query=Traditional%20Kerala%20cuisine%20served%20on%20banana%20leaf%2C%20variety%20of%20vegetarian%20dishes%2C%20coconut-based%20curries%2C%20rice%2C%20pickles%2C%20authentic%20homemade%20food%2C%20warm%20lighting%2C%20rustic%20setting%2C%20high-resolution%20professional%20food%20photography&width=400&height=300&seq=4&orientation=landscape" alt="Culinary Experiences" class="w-full h-64 object-cover object-top">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Culinary Experiences</h3>
+                        <p class="text-gray-700 mb-4">Savor authentic Kerala cuisine prepared using traditional methods. Participate in cooking classes to learn the secrets behind our flavorful dishes and spice blends.</p>
+                        <button class="bg-primary hover:bg-opacity-90 text-white px-4 py-2 rounded-button font-medium whitespace-nowrap">Learn More</button>
+                    </div>
+                </div>
+                
+                <!-- Attraction 3 -->
+                <div class="attraction-card bg-white rounded-lg overflow-hidden shadow-md">
+                    <img src="https://readdy.ai/api/search-image?query=Traditional%20Kerala%20art%20form%20Kathakali%20performer%20with%20elaborate%20costume%20and%20makeup%2C%20vibrant%20colors%2C%20dramatic%20facial%20expression%2C%20cultural%20performance%2C%20traditional%20setting%2C%20artistic%20lighting%2C%20high-resolution%20professional%20photography&width=400&height=300&seq=5&orientation=landscape" alt="Cultural Performances" class="w-full h-64 object-cover object-top">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Cultural Performances</h3>
+                        <p class="text-gray-700 mb-4">Witness captivating performances of traditional art forms like Kathakali, Mohiniyattam, and Theyyam. Experience the rich cultural heritage of Kerala through music and dance.</p>
+                        <button class="bg-primary hover:bg-opacity-90 text-white px-4 py-2 rounded-button font-medium whitespace-nowrap">Learn More</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-20">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-800 mb-2">Village Gallery</h2>
+                <div class="w-24 h-1 bg-primary mx-auto mb-4"></div>
+                <p class="text-gray-700 max-w-2xl mx-auto">Glimpses of the serene beauty and vibrant culture that define Pakkadappuraya.</p>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="gallery-item rounded-lg overflow-hidden shadow-md" onclick="openModal(this)">
+                    <img src="https://readdy.ai/api/search-image?query=Kerala%20backwaters%20with%20traditional%20houseboat%2C%20coconut%20trees%20reflecting%20in%20water%2C%20serene%20atmosphere%2C%20golden%20hour%20lighting%2C%20lush%20greenery%2C%20pristine%20water%2C%20high-resolution%20landscape%20photography&width=300&height=300&seq=6&orientation=squarish" alt="Village Backwaters" class="w-full h-64 object-cover object-top">
+                </div>
+                <div class="gallery-item rounded-lg overflow-hidden shadow-md" onclick="openModal(this)">
+                    <img src="https://readdy.ai/api/search-image?query=Traditional%20Kerala%20temple%20festival%20with%20decorated%20elephants%2C%20colorful%20parasols%2C%20musicians%20playing%20traditional%20instruments%2C%20crowd%20of%20devotees%2C%20vibrant%20atmosphere%2C%20cultural%20celebration%2C%20high-resolution%20photography&width=300&height=300&seq=7&orientation=squarish" alt="Temple Festival" class="w-full h-64 object-cover object-top">
+                </div>
+                <div class="gallery-item rounded-lg overflow-hidden shadow-md" onclick="openModal(this)">
+                    <img src="https://readdy.ai/api/search-image?query=Kerala%20village%20craftsman%20creating%20traditional%20handicrafts%2C%20detailed%20artisanal%20work%2C%20wooden%20crafts%2C%20natural%20materials%2C%20skilled%20hands%2C%20warm%20workshop%20lighting%2C%20authentic%20rural%20craftsmanship%2C%20high-resolution%20photography&width=300&height=300&seq=8&orientation=squarish" alt="Traditional Crafts" class="w-full h-64 object-cover object-top">
+                </div>
+                <div class="gallery-item rounded-lg overflow-hidden shadow-md" onclick="openModal(this)">
+                    <img src="https://readdy.ai/api/search-image?query=Kerala%20spice%20plantation%20with%20cardamom%2C%20pepper%2C%20cinnamon%20plants%2C%20rich%20colors%20of%20spices%2C%20workers%20harvesting%2C%20lush%20green%20environment%2C%20natural%20lighting%20through%20tree%20canopy%2C%20authentic%20agricultural%20scene%2C%20high-resolution%20photography&width=300&height=300&seq=9&orientation=squarish" alt="Spice Plantation" class="w-full h-64 object-cover object-top">
+                </div>
+                <div class="gallery-item rounded-lg overflow-hidden shadow-md" onclick="openModal(this)">
+                    <img src="https://readdy.ai/api/search-image?query=Traditional%20Kerala%20village%20morning%20scene%20with%20misty%20landscape%2C%20people%20starting%20daily%20activities%2C%20smoke%20from%20kitchen%20chimneys%2C%20golden%20sunrise%20light%2C%20peaceful%20atmosphere%2C%20authentic%20rural%20life%2C%20high-resolution%20photography&width=300&height=300&seq=10&orientation=squarish" alt="Village Morning" class="w-full h-64 object-cover object-top">
+                </div>
+                <div class="gallery-item rounded-lg overflow-hidden shadow-md" onclick="openModal(this)">
+                    <img src="https://readdy.ai/api/search-image?query=Kerala%20village%20children%20playing%20traditional%20games%20in%20courtyard%2C%20joyful%20expressions%2C%20natural%20setting%2C%20warm%20afternoon%20light%2C%20authentic%20childhood%20experience%2C%20cultural%20heritage%2C%20high-resolution%20photography&width=300&height=300&seq=11&orientation=squarish" alt="Village Children" class="w-full h-64 object-cover object-top">
+                </div>
+                <div class="gallery-item rounded-lg overflow-hidden shadow-md" onclick="openModal(this)">
+                    <img src="https://readdy.ai/api/search-image?query=Traditional%20Kerala%20fishing%20with%20Chinese%20fishing%20nets%20at%20sunset%2C%20silhouettes%20against%20orange%20sky%2C%20reflections%20in%20water%2C%20fishermen%20at%20work%2C%20coastal%20village%20scene%2C%20dramatic%20lighting%2C%20high-resolution%20photography&width=300&height=300&seq=12&orientation=squarish" alt="Traditional Fishing" class="w-full h-64 object-cover object-top">
+                </div>
+                <div class="gallery-item rounded-lg overflow-hidden shadow-md" onclick="openModal(this)">
+                    <img src="https://readdy.ai/api/search-image?query=Kerala%20village%20festival%20with%20traditional%20music%20performance%2C%20drummers%20playing%20chenda%2C%20colorful%20costumes%2C%20crowd%20of%20spectators%2C%20vibrant%20atmosphere%2C%20cultural%20celebration%2C%20authentic%20rural%20setting%2C%20high-resolution%20photography&width=300&height=300&seq=13&orientation=squarish" alt="Village Festival" class="w-full h-64 object-cover object-top">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal for Gallery -->
+    <div id="imageModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="modalImage">
+    </div>
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-800 mb-2">Contact Us</h2>
+                <div class="w-24 h-1 bg-primary mx-auto mb-4"></div>
+                <p class="text-gray-700 max-w-2xl mx-auto">Have questions about visiting Pakkadappuraya? We're here to help you plan your perfect village experience.</p>
+            </div>
+            
+            <div class="flex flex-col md:flex-row gap-12">
+                <div class="md:w-1/2 bg-white p-8 rounded-lg shadow-md">
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-6">Get in Touch</h3>
+                    <form>
+                        <div class="mb-4">
+                            <label for="name" class="block text-gray-700 mb-2">Your Name</label>
+                            <input type="text" id="name" class="w-full px-4 py-2 rounded focus:ring-2 focus:ring-primary" placeholder="John Doe">
+                        </div>
+                        <div class="mb-4">
+                            <label for="email" class="block text-gray-700 mb-2">Email Address</label>
+                            <input type="email" id="email" class="w-full px-4 py-2 rounded focus:ring-2 focus:ring-primary" placeholder="john@example.com">
+                        </div>
+                        <div class="mb-4">
+                            <label for="subject" class="block text-gray-700 mb-2">Subject</label>
+                            <input type="text" id="subject" class="w-full px-4 py-2 rounded focus:ring-2 focus:ring-primary" placeholder="Inquiry about village stay">
+                        </div>
+                        <div class="mb-6">
+                            <label for="message" class="block text-gray-700 mb-2">Your Message</label>
+                            <textarea id="message" rows="5" class="w-full px-4 py-2 rounded focus:ring-2 focus:ring-primary" placeholder="I'm interested in visiting your village..."></textarea>
+                        </div>
+                        <button type="submit" class="bg-primary hover:bg-opacity-90 text-white px-6 py-3 rounded-button font-medium whitespace-nowrap">Send Message</button>
+                    </form>
+                </div>
+                
+                <div class="md:w-1/2">
+                    <div class="bg-white p-8 rounded-lg shadow-md mb-8">
+                        <h3 class="text-2xl font-semibold text-gray-800 mb-6">Visit Us</h3>
+                        <div class="flex items-start mb-4">
+                            <div class="w-10 h-10 flex items-center justify-center text-primary mr-4">
+                                <i class="ri-map-pin-line ri-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-gray-800">Address</h4>
+                                <p class="text-gray-700">Pakkadappuraya Village, Wayanad District, Kerala, India - 673577</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start mb-4">
+                            <div class="w-10 h-10 flex items-center justify-center text-primary mr-4">
+                                <i class="ri-phone-line ri-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-gray-800">Phone</h4>
+                                <p class="text-gray-700">+91 98765 43210</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="w-10 h-10 flex items-center justify-center text-primary mr-4">
+                                <i class="ri-mail-line ri-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-gray-800">Email</h4>
+                                <p class="text-gray-700">info@pakkadappuraya.com</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden h-64">
+                        <div class="w-full h-full bg-cover bg-center" style="background-image: url('https://public.readdy.ai/gen_page/map_placeholder_1280x720.png')"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">About Pakkadappuraya</h3>
+                    <p class="text-gray-300 mb-4">A traditional Kerala village offering authentic cultural experiences, homestays, and a glimpse into the rich heritage of God's Own Country.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 flex items-center justify-center bg-primary rounded-full hover:bg-opacity-80">
+                            <i class="ri-facebook-fill"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 flex items-center justify-center bg-primary rounded-full hover:bg-opacity-80">
+                            <i class="ri-instagram-line"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 flex items-center justify-center bg-primary rounded-full hover:bg-opacity-80">
+                            <i class="ri-twitter-x-line"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 flex items-center justify-center bg-primary rounded-full hover:bg-opacity-80">
+                            <i class="ri-youtube-line"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-300 hover:text-white">Home</a></li>
+                        <li><a href="#about" class="text-gray-300 hover:text-white">About Us</a></li>
+                        <li><a href="#attractions" class="text-gray-300 hover:text-white">Village Attractions</a></li>
+                        <li><a href="#gallery" class="text-gray-300 hover:text-white">Gallery</a></li>
+                        <li><a href="#contact" class="text-gray-300 hover:text-white">Contact</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white">Homestay Booking</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white">Village Tours</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Newsletter</h3>
+                    <p class="text-gray-300 mb-4">Subscribe to our newsletter for updates on village events and special offers.</p>
+                    <div class="flex">
+                        <input type="email" placeholder="Your email address" class="px-4 py-2 w-full rounded-l border-none text-gray-800">
+                        <button class="bg-primary hover:bg-opacity-90 px-4 py-2 rounded-r !rounded-button whitespace-nowrap">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-12 pt-8 text-center text-gray-400">
+                <p>&copy; 2025 Pakkadappuraya Village Tourism. All rights reserved.</p>
+                <div class="flex justify-center mt-4 space-x-6">
+                    <div class="w-8 h-8 flex items-center justify-center">
+                        <i class="ri-visa-line ri-lg"></i>
+                    </div>
+                    <div class="w-8 h-8 flex items-center justify-center">
+                        <i class="ri-mastercard-line ri-lg"></i>
+                    </div>
+                    <div class="w-8 h-8 flex items-center justify-center">
+                        <i class="ri-paypal-line ri-lg"></i>
+                    </div>
+                    <div class="w-8 h-8 flex items-center justify-center">
+                        <i class="ri-amazon-pay-line ri-lg"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobile menu toggle
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            mobileMenuButton.addEventListener('click', function() {
+                mobileMenu.classList.toggle('hidden');
+            });
+        });
+        
+        // Gallery modal functionality
+        function openModal(element) {
+            const modal = document.getElementById('imageModal');
+            const modalImg = document.getElementById('modalImage');
+            modal.style.display = "flex";
+            modalImg.src = element.querySelector('img').src;
+        }
+        
+        function closeModal() {
+            document.getElementById('imageModal').style.display = "none";
+        }
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
+</body>
+</html>
