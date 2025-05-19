@@ -3,68 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>village</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
-</head>
-<body>
-    <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pakkadappuraya - Discover the Beauty of Our Village</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
-    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.min.css">
+    <script src="https://cdn.tailwindcss.com/3.4.3"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <script>
-        tailwind.config={
-            theme:{
-                extend:{
-                    colors:{
-                        primary:'#8B6D43',
-                        secondary:'#4A6741'
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#8B6D43',
+                        secondary: '#4A6741'
                     },
-                    borderRadius:{
-                        'none':'0px',
-                        'sm':'4px',
-                        DEFAULT:'8px',
-                        'md':'12px',
-                        'lg':'16px',
-                        'xl':'20px',
-                        '2xl':'24px',
-                        '3xl':'32px',
-                        'full':'9999px',
-                        'button':'8px'
+                    borderRadius: {
+                        'none': '0px',
+                        'sm': '4px',
+                        DEFAULT: '8px',
+                        'md': '12px',
+                        'lg': '16px',
+                        'xl': '20px',
+                        '2xl': '24px',
+                        '3xl': '32px',
+                        'full': '9999px',
+                        'button': '8px'
                     }
                 }
             }
         }
     </script>
     <style>
-        :where([class^="ri-"])::before { content: "\f3c2"; }
-        
         body {
             font-family: 'Inter', sans-serif;
             color: #333;
         }
-        
+
         .hero-section {
             background-image: url('https://readdy.ai/api/search-image?query=Beautiful%20traditional%20Kerala%20village%20landscape%20with%20lush%20green%20paddy%20fields%2C%20coconut%20trees%2C%20traditional%20houses%20with%20sloped%20roofs%2C%20small%20water%20bodies%2C%20and%20mountains%20in%20the%20background.%20Warm%20golden%20sunset%20light%2C%20peaceful%20rural%20atmosphere%2C%20high%20quality%20professional%20photography&width=1920&height=1080&seq=1&orientation=landscape');
             background-size: cover;
             background-position: center;
             position: relative;
         }
-        
+
         .hero-overlay {
             background: linear-gradient(to right, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0.1) 100%);
         }
-        
+
         .nav-link {
             position: relative;
         }
-        
+
         .nav-link::after {
             content: '';
             position: absolute;
@@ -75,47 +66,47 @@
             background-color: #8B6D43;
             transition: width 0.3s;
         }
-        
+
         .nav-link:hover::after {
             width: 100%;
         }
-        
+
         .attraction-card {
             transition: transform 0.3s, box-shadow 0.3s;
         }
-        
+
         .attraction-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
         }
-        
+
         .gallery-item {
             overflow: hidden;
             cursor: pointer;
         }
-        
+
         .gallery-item img {
             transition: transform 0.5s;
         }
-        
+
         .gallery-item:hover img {
             transform: scale(1.05);
         }
-        
+
         input[type="text"], 
         input[type="email"], 
         textarea {
             border: 1px solid #e2e8f0;
             transition: border-color 0.3s;
         }
-        
+
         input[type="text"]:focus, 
         input[type="email"]:focus, 
         textarea:focus {
             border-color: #8B6D43;
             outline: none;
         }
-        
+
         .modal {
             display: none;
             position: fixed;
@@ -125,15 +116,16 @@
             width: 100%;
             height: 100%;
             background-color: rgba(0, 0, 0, 0.9);
+            align-items: center;
+            justify-content: center;
         }
-        
+
         .modal-content {
-            margin: auto;
-            display: block;
-            max-width: 80%;
-            max-height: 80%;
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
         }
-        
+
         .close {
             position: absolute;
             top: 20px;
@@ -142,165 +134,904 @@
             font-size: 40px;
             cursor: pointer;
         }
-        /* From Uiverse.io by Saad3092003 */ 
-button {
-  position: relative;
-  display: inline-block;
-  cursor: pointer;
+
+        /* Button styles */
+        button.learn-more {
+            position: relative;
+            display: inline-block;
+            cursor: pointer;
+            outline: none;
+            border: 0;
+            background: transparent;
+            padding: 0;
+            font-size: inherit;
+            font-family: inherit;
+            width: 12rem;
+            height: auto;
+        }
+
+        button.learn-more .circle {
+            transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+            box-shadow: 0 0 5px 1px white;
+            position: relative;
+            display: block;
+            margin: 0;
+            width: 3rem;
+            height: 3rem;
+            background: #282936;
+            border-radius: 1.625rem;
+        }
+
+        button.learn-more .circle .icon {
+            transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            background: #fff;
+        }
+
+        button.learn-more .circle .icon.arrow {
+            left: 0.625rem;
+            width: 1.125rem;
+            height: 0.125rem;
+            background: none;
+        }
+
+        button.learn-more .circle .icon.arrow::before {
+            position: absolute;
+            content: "";
+            top: -0.29rem;
+            right: 0.0625rem;
+            width: 0.625rem;
+            height: 0.625rem;
+            border-top: 0.125rem solid #fff;
+            border-right: 0.125rem solid #fff;
+            transform: rotate(45deg);
+        }
+
+        button.learn-more .button-text {
+            transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            padding: 0.75rem 0;
+            margin: 0 0 0 1.85rem;
+            color: rgba(255, 255, 255, 0.493);
+            font-weight: 700;
+            line-height: 1.6;
+            text-align: center;
+            text-transform: uppercase;
+        }
+
+        button:hover .circle {
+            width: 100%;
+            box-shadow: 0 0 10px 2px white;
+        }
+
+        button:hover .button-text {
+            transform: translate(-1.7rem, 0);
+            color: #fff;
+        }
+
+        button:hover .circle .icon.arrow {
+            background: #fff;
+            transform: translate(8.7rem, 0);
+        }
+
+        button:active .circle .icon.arrow {
+            transform: translate(9.5rem, 0);
+            transition: all 0.3s;
+        }
+
+        button:active .circle {
+            transform: scale(0.9);
+            transition: all 0.3s;
+            box-shadow: 0 0 5px 0.5px white;
+        }
+
+        button:active .button-text {
+            color: rgba(255, 255, 255, 0.459);
+        }
+
+        /* Send message button */
+        button.a {
+            padding: 15px 30px;
+            font-size: 18px;
+            outline: none;
+            border: none;
+            border-radius: 10px;
+            transition: 0.5s;
+            background: #1e1e1e;
+            cursor: pointer;
+            color: greenyellow;
+            box-shadow: 0 0 10px #363636, inset 0 0 10px #363636;
+        }
+
+        button.a:hover {
+            animation: a 0.5s 1 linear;
+        }
+
+        @keyframes a {
+            0% { transform: scale(0.7, 1.3); }
+            25% { transform: scale(1.3, 0.7); }
+            50% { transform: scale(0.7, 1.3); }
+            75% { transform: scale(1.3, 0.7); }
+            100% { transform: scale(1, 1); }
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .hero-section h1 {
+                font-size: 2.5rem;
+            }
+            .hero-section p {
+                font-size: 1rem;
+            }
+            .gallery-item img {
+                height: 150px;
+            }
+            .modal-content {
+                max-width: 95%;
+                max-height: 80%;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .grid-cols-2 {
+                grid-template-columns: 1fr;
+            }
+            .attraction-card img {
+                height: 200px;
+            }
+        }
+        /* From Uiverse.io by Ashon-G */ 
+.uiverse {
+  --duration: 7s;
+  --easing: linear;
+  --c-color-1: rgba(255, 163, 26, 0.7);
+  --c-color-2: #1a23ff;
+  --c-color-3: #e21bda;
+  --c-color-4: rgba(255, 232, 26, 0.7);
+  --c-shadow: rgba(255, 223, 87, 0.5);
+  --c-shadow-inset-top: rgba(255, 223, 52, 0.9);
+  --c-shadow-inset-bottom: rgba(255, 250, 215, 0.8);
+  --c-radial-inner: #ffd215;
+  --c-radial-outer: #fff172;
+  --c-color: #fff;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-appearance: none;
   outline: none;
-  border: 0;
-  vertical-align: middle;
-  text-decoration: none;
-  background: transparent;
-  padding: 0;
-  font-size: inherit;
-  font-family: inherit;
-}
-
-button.learn-more {
-  width: 12rem;
-  height: auto;
-}
-
-button.learn-more .circle {
-  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
-  box-shadow: 0 0 5px 1px white;
   position: relative;
-  display: block;
+  cursor: pointer;
+  border: none;
+  display: table;
+  border-radius: 24px;
+  padding: 0;
   margin: 0;
-  width: 3rem;
-  height: 3rem;
-  background: #282936;
-  border-radius: 1.625rem;
+  text-align: center;
+  font-weight: 600;
+  font-size: 16px;
+  letter-spacing: 0.02em;
+  line-height: 1.5;
+  color: var(--c-color);
+  background: radial-gradient(
+    circle,
+    var(--c-radial-inner),
+    var(--c-radial-outer) 80%
+  );
+  box-shadow: 0 0 14px var(--c-shadow);
 }
 
-button.learn-more .circle .icon {
-  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  margin: auto;
-  background: #fff;
-}
-
-button.learn-more .circle .icon.arrow {
-  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
-  left: 0.625rem;
-  width: 1.125rem;
-  height: 0.125rem;
-  background: none;
-}
-
-button.learn-more .circle .icon.arrow::before {
-  position: absolute;
+.uiverse:before {
   content: "";
-  top: -0.29rem;
-  right: 0.0625rem;
-  width: 0.625rem;
-  height: 0.625rem;
-  border-top: 0.125rem solid #fff;
-  border-right: 0.125rem solid #fff;
-  transform: rotate(45deg);
+  pointer-events: none;
+  position: absolute;
+  z-index: 3;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 24px;
+  box-shadow:
+    inset 0 3px 12px var(--c-shadow-inset-top),
+    inset 0 -3px 4px var(--c-shadow-inset-bottom);
 }
 
-button.learn-more .button-text {
-  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+.uiverse .wrapper {
+  -webkit-mask-image: -webkit-radial-gradient(white, black);
+  overflow: hidden;
+  border-radius: 24px;
+  min-width: 132px;
+  padding: 12px 0;
+}
+
+.uiverse .wrapper span {
+  display: inline-block;
+  position: relative;
+  z-index: 1;
+}
+
+.uiverse:hover {
+  --duration: 1400ms;
+}
+
+.uiverse .wrapper .circle {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  filter: blur(var(--blur, 8px));
+  background: var(--background, transparent);
+  transform: translate(var(--x, 0), var(--y, 0)) translateZ(0);
+  animation: var(--animation, none) var(--duration) var(--easing) infinite;
+}
+
+.uiverse .wrapper .circle.circle-1,
+.uiverse .wrapper .circle.circle-9,
+.uiverse .wrapper .circle.circle-10 {
+  --background: var(--c-color-4);
+}
+
+.uiverse .wrapper .circle.circle-3,
+.uiverse .wrapper .circle.circle-4 {
+  --background: var(--c-color-2);
+  --blur: 14px;
+}
+
+.uiverse .wrapper .circle.circle-5,
+.uiverse .wrapper .circle.circle-6 {
+  --background: var(--c-color-3);
+  --blur: 16px;
+}
+
+.uiverse .wrapper .circle.circle-2,
+.uiverse .wrapper .circle.circle-7,
+.uiverse .wrapper .circle.circle-8,
+.uiverse .wrapper .circle.circle-11,
+.uiverse .wrapper .circle.circle-12 {
+  --background: var(--c-color-1);
+  --blur: 12px;
+}
+
+.uiverse .wrapper .circle.circle-1 {
+  --x: 0;
+  --y: -40px;
+  --animation: circle-1;
+}
+
+.uiverse .wrapper .circle.circle-2 {
+  --x: 92px;
+  --y: 8px;
+  --animation: circle-2;
+}
+
+.uiverse .wrapper .circle.circle-3 {
+  --x: -12px;
+  --y: -12px;
+  --animation: circle-3;
+}
+
+.uiverse .wrapper .circle.circle-4 {
+  --x: 80px;
+  --y: -12px;
+  --animation: circle-4;
+}
+
+.uiverse .wrapper .circle.circle-5 {
+  --x: 12px;
+  --y: -4px;
+  --animation: circle-5;
+}
+
+.uiverse .wrapper .circle.circle-6 {
+  --x: 56px;
+  --y: 16px;
+  --animation: circle-6;
+}
+
+.uiverse .wrapper .circle.circle-7 {
+  --x: 8px;
+  --y: 28px;
+  --animation: circle-7;
+}
+
+.uiverse .wrapper .circle.circle-8 {
+  --x: 28px;
+  --y: -4px;
+  --animation: circle-8;
+}
+
+.uiverse .wrapper .circle.circle-9 {
+  --x: 20px;
+  --y: -12px;
+  --animation: circle-9;
+}
+
+.uiverse .wrapper .circle.circle-10 {
+  --x: 64px;
+  --y: 16px;
+  --animation: circle-10;
+}
+
+.uiverse .wrapper .circle.circle-11 {
+  --x: 4px;
+  --y: 4px;
+  --animation: circle-11;
+}
+
+.uiverse .wrapper .circle.circle-12 {
+  --blur: 14px;
+  --x: 52px;
+  --y: 4px;
+  --animation: circle-12;
+}
+
+@keyframes circle-1 {
+  33% {
+    transform: translate(0px, 16px) translateZ(0);
+  }
+
+  66% {
+    transform: translate(12px, 64px) translateZ(0);
+  }
+}
+
+@keyframes circle-2 {
+  33% {
+    transform: translate(80px, -10px) translateZ(0);
+  }
+
+  66% {
+    transform: translate(72px, -48px) translateZ(0);
+  }
+}
+
+@keyframes circle-3 {
+  33% {
+    transform: translate(20px, 12px) translateZ(0);
+  }
+
+  66% {
+    transform: translate(12px, 4px) translateZ(0);
+  }
+}
+
+@keyframes circle-4 {
+  33% {
+    transform: translate(76px, -12px) translateZ(0);
+  }
+
+  66% {
+    transform: translate(112px, -8px) translateZ(0);
+  }
+}
+
+@keyframes circle-5 {
+  33% {
+    transform: translate(84px, 28px) translateZ(0);
+  }
+
+  66% {
+    transform: translate(40px, -32px) translateZ(0);
+  }
+}
+
+@keyframes circle-6 {
+  33% {
+    transform: translate(28px, -16px) translateZ(0);
+  }
+
+  66% {
+    transform: translate(76px, -56px) translateZ(0);
+  }
+}
+
+@keyframes circle-7 {
+  33% {
+    transform: translate(8px, 28px) translateZ(0);
+  }
+
+  66% {
+    transform: translate(20px, -60px) translateZ(0);
+  }
+}
+
+@keyframes circle-8 {
+  33% {
+    transform: translate(32px, -4px) translateZ(0);
+  }
+
+  66% {
+    transform: translate(56px, -20px) translateZ(0);
+  }
+}
+
+@keyframes circle-9 {
+  33% {
+    transform: translate(20px, -12px) translateZ(0);
+  }
+
+  66% {
+    transform: translate(80px, -8px) translateZ(0);
+  }
+}
+
+@keyframes circle-10 {
+  33% {
+    transform: translate(68px, 20px) translateZ(0);
+  }
+
+  66% {
+    transform: translate(100px, 28px) translateZ(0);
+  }
+}
+
+@keyframes circle-11 {
+  33% {
+    transform: translate(4px, 4px) translateZ(0);
+  }
+
+  66% {
+    transform: translate(68px, 20px) translateZ(0);
+  }
+}
+
+@keyframes circle-12 {
+  33% {
+    transform: translate(56px, 0px) translateZ(0);
+  }
+
+  66% {
+    transform: translate(60px, -32px) translateZ(0);
+  }
+}
+.c {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  width: 200px;
+}
+
+.c .btn {
+  height: 50px;
+  margin: 20px;
+  margin-bottom: 40px;
+  position: relative;
+  width: 155px;
+}
+
+.c .btn a {
+  align-items: center;
+  background: rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 30px;
+  box-shadow: 0 15px 35px rgba(255, 255, 255, 0.2);
+  color: #fff;
+  display: flex;
+  font-size: 18px;
+  font-weight: 700;
+  left: 0;
+  top: 0;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  justify-content: center;
+  letter-spacing: 1px;
+  text-decoration: none;
+  overflow: hidden;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(15px);
+  z-index: 1;
+  transition: 0.5s;
+}
+
+.c .btn:hover a {
+  letter-spacing: 2px;
+}
+
+.c .btn a::before {
+  content: '';
   position: absolute;
   top: 0;
   left: 0;
-  right: 0;
-  bottom: 0;
-  padding: 0.75rem 0;
-  margin: 0 0 0 1.85rem;
-  color: rgba(255, 255, 255, 0.493);
-  font-weight: 700;
-  line-height: 1.6;
-  text-align: center;
-  text-transform: uppercase;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(to left,
+                rgba(255,255,255,0.15),
+                transparent);
+  transform: skewX(45deg) translateX(0);
+  transition: 0.5s;
 }
 
-button:hover .circle {
-  width: 100%;
-  box-shadow: 0 0 10px 2px white;
+.c .btn:hover a::before {
+  transform: skewX(45deg) translateX(200%);
 }
 
-button:hover .button-text {
-  transform: translate(-1.7rem, 0);
-}
-
-button:hover .circle .icon.arrow {
-  background: #fff;
-  transform: translate(8.7rem, 0);
-}
-
-button:active .circle .icon.arrow {
-  transform: translate(9.5rem, 0);
-  transition: all 0.3s;
-}
-
-button:active .circle {
-  transform: scale(0.9);
-  transition: all 0.3s;
-  box-shadow: 0 0 5px 0.5px white;
-}
-
-button:hover .button-text {
-  color: #fff;
-}
-
-button:active .button-text {
-  color: rgba(255, 255, 255, 0.459);
-}
-/* From Uiverse.io by Shoh2008 */ 
-.a {
-  padding: 15px 30px;
-  font-size: 18px;
-  outline: none;
-  border: none;
+.c .btn::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -5px;
+  height: 10px;
+  width: 30px;
+  background: rgb(249, 26, 1);
   border-radius: 10px;
   transition: 0.5s;
-  background: #1e1e1e;
+  transition-delay: 0s;
+}
+
+.c .btn:hover::before {
+  bottom: 0;
+  height: 50%;
+  width: 80%;
+  border-radius: 30px;
+  transition-delay: 0.5s;
+}
+
+.c .btn::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: -5px;
+  height: 10px;
+  width: 30px;
+  background: rgb(255, 0, 0);
+  border-radius: 10px;
+  transition: 0.5s;
+  transition-delay: 0s;
+}
+
+.c .btn:hover::after {
+  top: 0;
+  height: 50%;
+  width: 80%;
+  border-radius: 30px;
+  transition-delay: 0.5s;
+}
+
+.c .btn:nth-child(1):before,
+.c .btn:nth-child(1)::after {
+  background: #ff0000;
+  box-shadow: 0 0 5px #ff00008a,
+    0 0 15px #ff2b2b,
+    0 0 30px #ff2b2b,
+    0 0 60px #ff2b2b;
+}
+
+.c .btn:active a {
+  color: #000;
+}
+.cw {
+  position: relative;
+  width: 120px;
+  height: 40px;
+  background-color: #000;
+  display: flex;
+  align-items: center;
+  color: white;
+  flex-direction: column;
+  justify-content: center;
+  border: none;
+  padding: 12px;
+  gap: 12px;
+  border-radius: 8px;
   cursor: pointer;
-  color: greenyellow;
-  box-shadow: 0 0 10px #363636, inset 0 0 10px #363636;
 }
 
-button:hover {
-  animation: a 0.5s 1 linear;
+.cw::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  left: -4px;
+  top: -1px;
+  margin: auto;
+  width: 128px;
+  height: 48px;
+  border-radius: 10px;
+  background: linear-gradient(-45deg, #e81cff 0%, #40c9ff 100% );
+  z-index: -10;
+  pointer-events: none;
+  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-@keyframes a {
-  0% {
-    transform: scale(0.7, 1.3);
+.cw::after {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(-45deg, #fc00ff 0%, #00dbde 100% );
+  transform: translate3d(0, 0, 0) scale(0.95);
+  filter: blur(20px);
+}
+
+.cw:hover::after {
+  filter: blur(30px);
+}
+
+.cw:hover::before {
+  transform: rotate(-180deg);
+}
+
+.cw:active::before {
+  scale: 0.7;
+}
+
+/* Reset some basic elements */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            color: #333;
+        }
+        
+        .main-content {
+            flex: 1;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        
+        /* Footer Styles */
+        footer {
+            background-color: #222;
+            color: #fff;
+            padding: 30px 0;
+        }
+        
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+        
+        .footer-section {
+            flex: 1;
+            min-width: 200px;
+            margin-bottom: 20px;
+            padding-right: 20px;
+        }
+        
+        .footer-section h3 {
+            font-size: 18px;
+            margin-bottom: 15px;
+            color: #fff;
+            border-bottom: 1px solid #444;
+            padding-bottom: 5px;
+        }
+        
+        .footer-section p {
+            margin-bottom: 10px;
+            color: #ccc;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: #fff;
+            text-decoration: underline;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 15px;
+        }
+        
+        .social-links a {
+            color: #fff;
+            width: 36px;
+            height: 36px;
+            background-color: #444;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            border-radius: 50%;
+            transition: background-color 0.3s;
+        }
+        
+        .social-links a:hover {
+            background-color: #007bff;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #444;
+            color: #aaa;
+            font-size: 14px;
+        }
+        
+        .footer-bottom p {
+            margin-bottom: 5px;
+        }
+        
+        /* Newsletter Form */
+        .newsletter-form {
+            display: flex;
+            margin-top: 15px;
+        }
+        
+        .newsletter-form input {
+            flex: 1;
+            padding: 10px;
+            border: none;
+            outline: none;
+            border-radius: 4px 0 0 4px;
+        }
+        
+        .newsletter-form button {
+            padding: 10px 15px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 0 4px 4px 0;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .newsletter-form button:hover {
+            background-color: #0056b3;
+        }
+        
+        /* Responsive design */
+        @media screen and (max-width: 768px) {
+            .footer-content {
+                flex-direction: column;
+            }
+            
+            .footer-section {
+                margin-bottom: 30px;
+                padding-right: 0;
+            }
+        }
+/* From Uiverse.io by vinodjangid07 */ 
+/* From Uiverse.io by Awadhesh684827 */ 
+[class*="btn-glitch-"] {
+  display: inline-block;
+  font-family: "VT323", monospace;
+  border: 1px solid rgb(0, 0, 0);
+  color: rgb(0, 0, 0);
+  padding: 10px 13px;
+  min-width: 175px;
+  line-height: 1.5em;
+  white-space: no-wrap;
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: 15px;
+
+  .text,
+  .decoration {
+    display: inline-block;
   }
 
+  .decoration {
+    display: inline-block;
+    float: right;
+  }
+
+  &:hover,
+  &:focus {
+    animation-name: glitch;
+    animation-duration: 0.2s;
+    background-color: yellow;
+    color: black;
+    border: 1px solid yellow;
+
+    .text-decoration {
+      animation-name: blink;
+      animation-duration: 0.1s;
+      animation-iteration-count: infinite;
+    }
+
+    .decoration {
+      animation-name: blink;
+      animation-duration: 0.1s;
+      animation-iteration-count: infinite;
+    }
+  }
+
+  &:active {
+    background: none;
+    color: yellow;
+
+    .text-decoration {
+      animation-name: none;
+    }
+
+    .decoration {
+      animation-name: none;
+    }
+
+    :before,
+    :after {
+      display: none;
+    }
+  }
+}
+
+@keyframes glitch {
   25% {
-    transform: scale(1.3, 0.7);
+    background-color: red;
+    transform: translateX(-10px);
+    letter-spacing: 10px;
   }
 
-  50% {
-    transform: scale(0.7, 1.3);
+  35% {
+    background-color: green;
+    transform: translate(10px);
   }
 
-  75% {
-    transform: scale(1.3, 0.7);
+  59% {
+    opacity: 0;
+  }
+
+  60% {
+    background-color: blue;
+    transform: translate(-10px);
+    filter: blur(5px);
   }
 
   100% {
-    transform: scale(1, 1);
+    background-color: yellow;
+    blur: (5px);
   }
 }
 
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+@keyframes shrink {
+  100% {
+    width: 10%;
+  }
+}
 
     </style>
-</head>
+    </head>
 <body class="bg-gray-50">
     <!-- Navigation -->
-    <nav class="bg-white shadow-md fixed w-full z-10">
-        <div class="container mx-auto px-4 py-3">
+    <nav class="shadow-md fixed w-full z-10" style="background: lightgreen;">
+        <div class="container mx-auto px-4 py-3" style="">
             <div class="flex justify-between items-center">
                 <a href="#" class="text-2xl font-['Pacifico'] text-primary">Pakkadappuraya</a>
-                
                 <div class="hidden md:flex space-x-8">
                     <a href="#" class="nav-link text-gray-800 hover:text-primary">Home</a>
                     <a href="#about" class="nav-link text-gray-800 hover:text-primary">About</a>
@@ -308,12 +1039,10 @@ button:hover {
                     <a href="#gallery" class="nav-link text-gray-800 hover:text-primary">Gallery</a>
                     <a href="#contact" class="nav-link text-gray-800 hover:text-primary">Contact</a>
                 </div>
-                
                 <div class="md:hidden w-10 h-10 flex items-center justify-center cursor-pointer" id="mobile-menu-button">
                     <i class="ri-menu-line text-xl"></i>
                 </div>
             </div>
-            
             <!-- Mobile Menu -->
             <div class="md:hidden hidden" id="mobile-menu">
                 <div class="flex flex-col space-y-4 py-4">
@@ -332,15 +1061,14 @@ button:hover {
         <div class="hero-overlay w-full h-full absolute"></div>
         <div class="container mx-auto px-4 relative z-1">
             <div class="max-w-2xl text-white">
-                <h1 class="text-5xl font-bold mb-4">Welcome To Pakkadappuraya   </h1>
+                <h1 class="text-5xl font-bold mb-4">Welcome To Pakkadappuraya</h1>
                 <p class="text-xl mb-8">Discover the untouched beauty and rich cultural heritage of Pakkadappuraya, where tradition meets nature in perfect harmony.</p>
-                <!-- From Uiverse.io by Saad3092003 --> 
-           <button class="learn-more">
-            <span aria-hidden="true" class="circle">
-            <span class="icon arrow"></span>
-            </span>
-            <span class="button-text">Learn More</span>
-</button> 
+                <button class="learn-more">
+                    <span aria-hidden="true" class="circle">
+                        <span class="icon arrow"></span>
+                    </span>
+                    <span class="button-text">Learn More</span>
+                </button>
             </div>
         </div>
     </section>
@@ -352,18 +1080,14 @@ button:hover {
                 <h2 class="text-3xl font-bold text-gray-800 mb-2">Welcome to Pakkadappuraya</h2>
                 <div class="w-24 h-1 bg-primary mx-auto"></div>
             </div>
-            
             <div class="flex flex-col md:flex-row items-center gap-12">
                 <div class="md:w-1/2">
                     <h3 class="text-2xl font-semibold text-gray-800 mb-4">A Hidden Gem in Kerala</h3>
                     <p class="text-gray-700 mb-4">Nestled amidst the lush green landscapes of Kerala, Pakkadappuraya is a picturesque village that offers visitors a glimpse into the authentic rural life of God's Own Country. With its pristine paddy fields, coconut groves, and traditional architecture, our village stands as a testament to Kerala's rich cultural heritage.</p>
                     <p class="text-gray-700 mb-6">The name "Pakkadappuraya" derives from the Malayalam words meaning "neighboring kitchen," reflecting our community's warm hospitality and the importance of shared meals in our culture. For generations, our village has preserved traditional farming methods, art forms, and culinary practices that visitors can experience firsthand.</p>
-                     <button class="learn-more">
-            <span aria-hidden="true" class="circle">
-            <span class="icon arrow"></span>
-            </span>
-            <span class="button-text">Learn More</span>
-</button> 
+                       <div class="c">
+            <div class="btn"><a >Read More</a></div>
+                       </div>
                 </div>
                 <div class="md:w-1/2">
                     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNvdiIcnOB22snjMkNtzOzn-JkzzKKq-WJ7oOXGkVfzLiXupvC6vGGlotn3j4sEpqht7s&usqp=CAU" alt="Traditional Kerala Village" class="rounded-lg shadow-lg w-full h-auto object-cover">
@@ -380,92 +1104,71 @@ button:hover {
                 <div class="w-24 h-1 bg-primary mx-auto mb-4"></div>
                 <p class="text-gray-700 max-w-2xl mx-auto">Discover the unique experiences that make Pakkadappuraya a must-visit destination for travelers seeking authentic cultural immersion.</p>
             </div>
-            
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Attraction 1 -->
                 <div class="attraction-card bg-white rounded-lg overflow-hidden shadow-md">
-                    <img style="height: 280px;" src="https://content.jdmagicbox.com/comp/malappuram/e3/9999px483.x483.180228202050.r7e3/catalogue/kooriyad-juma-masjid-kooriyad-malappuram-mosques-vokzr2f0n1.jpg " alt="Traditional Farming" class="w-full  object-cover object-top">
+                    <img src="https://content.jdmagicbox.com/comp/malappuram/e3/9999px483.x483.180228202050.r7e3/catalogue/kooriyad-juma-masjid-kooriyad-malappuram-mosques-vokzr2f0n1.jpg" alt="Traditional Farming" class="w-full h-64 object-cover object-top">
                     <div class="p-6">
-                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Traditional Farming Experience</h3>
-                        <p class="text-gray-700 mb-4">Join local farmers in their daily activities, from paddy planting to harvesting. Learn ancient agricultural techniques that have been passed down through generations.</p>
-                       <button class="learn-more">
-            <span aria-hidden="true" class="circle">
-            <span class="icon arrow"></span>
-            </span>
-            <span class="button-text">Learn More</span>
-</button> 
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2 text-danger">Masjid</h3>
+                        <p class="text-gray-700 mb-4">Witness captivating performances of traditional art forms like Kathakali, Mohiniyattam, and Theyyam. Experience the rich cultural heritage of Kerala through music and dance.</p>
+                        <button class="cw">
+  See more
+                        </button>
                     </div>
                 </div>
-                
                 <!-- Attraction 2 -->
                 <div class="attraction-card bg-white rounded-lg overflow-hidden shadow-md">
-                    <img src="https://www.keralatourism.org/images/ebooks/dance-of-divine/near_by_location/large/a_small_shrine20171019122111_1_2.JPG" alt="Culinary Experiences" class="w-full h-50 object-cover object-top">
+                    <img src="https://www.keralatourism.org/images/ebooks/dance-of-divine/near_by_location/large/a_small_shrine20171019122111_1_2.JPG" alt="Culinary Experiences" class="w-full h-64 object-cover object-top">
                     <div class="p-6">
-                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Culinary Experiences</h3>
-                        <p class="text-gray-700 mb-4">Savor authentic Kerala cuisine prepared using traditional methods. Participate in cooking classes to learn the secrets behind our flavorful dishes and spice blends.</p>
-                        <button class="learn-more">
-            <span aria-hidden="true" class="circle">
-            <span class="icon arrow"></span>
-            </span>
-            <span class="button-text">Learn More</span>
-</button> 
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2 text-danger">Temples</h3>
+                        <p class="text-gray-700 mb-4">Witness captivating performances of traditional art forms like Kathakali, Mohiniyattam, and Theyyam. Experience the rich cultural heritage of Kerala through music and dance.</p>
+                        <button class="cw">
+  See more
+                        </button>
                     </div>
                 </div>
-                
                 <!-- Attraction 3 -->
                 <div class="attraction-card bg-white rounded-lg overflow-hidden shadow-md">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3WWwP-CIUxGnLOXoJlnFRgwDW9RAm8WF9aUD2kCy_pBYv1WiZG8SUrlVwJpRTdK3D7A8&usqp=CAU"alt="Cultural Performances" class="w-full h-50 object-cover object-top">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3WWwP-CIUxGnLOXoJlnFRgwDW9RAm8WF9aUD2kCy_pBYv1WiZG8SUrlVwJpRTdK3D7A8&usqp=CAU" alt="Cultural Performances" class="w-full h-64 object-cover object-top">
                     <div class="p-6">
-                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Cultural Performances</h3>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2 text-danger">River</h3>
                         <p class="text-gray-700 mb-4">Witness captivating performances of traditional art forms like Kathakali, Mohiniyattam, and Theyyam. Experience the rich cultural heritage of Kerala through music and dance.</p>
-                        <button class="learn-more">
-            <span aria-hidden="true" class="circle">
-            <span class="icon arrow"></span>
-            </span>
-            <span class="button-text">Learn More</span>
-</button> 
+                        <button class="cw">
+  See more
+                        </button>
                     </div>
                 </div>
-                  <!-- Attraction 4 -->
+                <!-- Attraction 4 -->
                 <div class="attraction-card bg-white rounded-lg overflow-hidden shadow-md">
-                    <img style=" height: 280px;"src="https://scontent.fcok6-1.fna.fbcdn.net/v/t39.30808-6/360091056_292651346476037_8201424726916745923_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=huLZhcI214MQ7kNvwEIedJQ&_nc_oc=AdmXLaVMKmkpwm9mpb9adlcltIScGtbvTJz5bJ4QCFT54RLZXSQNUEs9KeM-bXJOHKA&_nc_zt=23&_nc_ht=scontent.fcok6-1.fna&_nc_gid=I6OMup2aQ8uASpp0Uz5ZWw&oh=00_AfKr8H3JP84aji0acsA1FJRJlUnJMgwoCsh0c6scPvbjHQ&oe=682B7EDD"alt="Cultural Performances" class="w-full h-50 object-cover object-top">
+                    <img src="https://scontent.fcok6-1.fna.fbcdn.net/v/t39.30808-6/360091056_292651346476037_8201424726916745923_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=huLZhcI214MQ7kNvwEIedJQ&_nc_oc=AdmXLaVMKmkpwm9mpb9adlcltIScGtbvTJz5bJ4QCFT54RLZXSQNUEs9KeM-bXJOHKA&_nc_zt=23&_nc_ht=scontent.fcok6-1.fna&_nc_gid=I6OMup2aQ8uASpp0Uz5ZWw&oh=00_AfKr8H3JP84aji0acsA1FJRJlUnJMgwoCsh0c6scPvbjHQ&oe=682B7EDD" alt="Cultural Performances" class="w-full h-64 object-cover object-top">
                     <div class="p-6">
-                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Cultural Performances</h3>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2 text-danger">School</h3>
                         <p class="text-gray-700 mb-4">Witness captivating performances of traditional art forms like Kathakali, Mohiniyattam, and Theyyam. Experience the rich cultural heritage of Kerala through music and dance.</p>
-                        <button class="learn-more">
-            <span aria-hidden="true" class="circle">
-            <span class="icon arrow"></span>
-            </span>
-            <span class="button-text">Learn More</span>
-</button> 
+                        <button class="cw">
+  See more
+                        </button>
                     </div>
                 </div>
-                  <!-- Attraction 5-->
+                <!-- Attraction 5 -->
                 <div class="attraction-card bg-white rounded-lg overflow-hidden shadow-md">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjURjlFVpN3tEKy0U4PPfYgTw8papAr_21_A&s"alt="Cultural Performances" class="w-full h-50 object-cover object-top">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjURjlFVpN3tEKy0U4PPfYgTw8papAr_21_A&s" alt="Cultural Performances" class="w-full h-64 object-cover object-top">
                     <div class="p-6">
-                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Cultural Performances</h3>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2 text-danger">Hospital</h3>
                         <p class="text-gray-700 mb-4">Witness captivating performances of traditional art forms like Kathakali, Mohiniyattam, and Theyyam. Experience the rich cultural heritage of Kerala through music and dance.</p>
-                        <button class="learn-more">
-            <span aria-hidden="true" class="circle">
-            <span class="icon arrow"></span>
-            </span>
-            <span class="button-text">Learn More</span>
-</button> 
+                        <button class="cw">
+  See more
+                        </button>
                     </div>
                 </div>
-                  <!-- Attraction 6 -->
+                <!-- Attraction 6 -->
                 <div class="attraction-card bg-white rounded-lg overflow-hidden shadow-md">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzQ8OSpbo5ygsFbmVXdqevdiremyjbUEqx_ncJChLKxrJ6aSCAzYTCk6d9rsfiGEysFu8&usqp=CAU"alt="Cultural Performances" class="w-full h-50 object-cover object-top" style="height: 380px;">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzQ8OSpbo5ygsFbmVXdqevdiremyjbUEqx_ncJChLKxrJ6aSCAzYTCk6d9rsfiGEysFu8&usqp=CAU" alt="Cultural Performances" class="w-full h-64 object-cover object-top">
                     <div class="p-6">
-                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Cultural Performances</h3>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2 text-danger">Auditoriam</h3>
                         <p class="text-gray-700 mb-4">Witness captivating performances of traditional art forms like Kathakali, Mohiniyattam, and Theyyam. Experience the rich cultural heritage of Kerala through music and dance.</p>
-                        <button class="learn-more">
-            <span aria-hidden="true" class="circle">
-            <span class="icon arrow"></span>
-            </span>
-            <span class="button-text">Learn More</span>
-</button> 
+                        <button class="cw">
+  See more
+                        </button>
                     </div>
                 </div>
             </div>
@@ -480,31 +1183,30 @@ button:hover {
                 <div class="w-24 h-1 bg-primary mx-auto mb-4"></div>
                 <p class="text-gray-700 max-w-2xl mx-auto">Glimpses of the serene beauty and vibrant culture that define Pakkadappuraya.</p>
             </div>
-            
             <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
                 <div class="gallery-item rounded-lg overflow-hidden shadow-md" onclick="openModal(this)">
-                    <img src="https://readdy.ai/api/search-image?query=Kerala%20backwaters%20with%20traditional%20houseboat%2C%20coconut%20trees%20reflecting%20in%20water%2C%20serene%20atmosphere%2C%20golden%20hour%20lighting%2C%20lush%20greenery%2C%20pristine%20water%2C%20high-resolution%20landscape%20photography&width=300&height=300&seq=6&orientation=squarish" alt="Village Backwaters" class="w-full h-64 object-cover object-top">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWHzdPs2mH2qDkFQonN_I3UuNQAZDzWNZbZ2ZvsVq1_sjfEo0c1c8KhS-kbUsVh-cYc9I&usqp=CAU" alt="Village Backwaters" class="w-full h-64 object-cover object-top">
                 </div>
                 <div class="gallery-item rounded-lg overflow-hidden shadow-md" onclick="openModal(this)">
-                    <img src="https://readdy.ai/api/search-image?query=Traditional%20Kerala%20temple%20festival%20with%20decorated%20elephants%2C%20colorful%20parasols%2C%20musicians%20playing%20traditional%20instruments%2C%20crowd%20of%20devotees%2C%20vibrant%20atmosphere%2C%20cultural%20celebration%2C%20high-resolution%20photography&width=300&height=300&seq=7&orientation=squarish" alt="Temple Festival" class="w-full h-64 object-cover object-top">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfZzkfLu7T526rvjg0r5E11dk26LpqLhz2N9YdQKAThSbfQkp4ZJ6or_iLnPLvT2Q4wpQ&usqp=CAU" alt="Temple Festival" class="w-full h-64 object-cover object-top">
                 </div>
                 <div class="gallery-item rounded-lg overflow-hidden shadow-md" onclick="openModal(this)">
-                    <img src="https://readdy.ai/api/search-image?query=Kerala%20village%20craftsman%20creating%20traditional%20handicrafts%2C%20detailed%20artisanal%20work%2C%20wooden%20crafts%2C%20natural%20materials%2C%20skilled%20hands%2C%20warm%20workshop%20lighting%2C%20authentic%20rural%20craftsmanship%2C%20high-resolution%20photography&width=300&height=300&seq=8&orientation=squarish" alt="Traditional Crafts" class="w-full h-64 object-cover object-top">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxu5EtzaNE3OhYPJSi8gV8u9skmNSUvac4yw&s" alt="Traditional Crafts" class="w-full h-64 object-cover object-top">
                 </div>
                 <div class="gallery-item rounded-lg overflow-hidden shadow-md" onclick="openModal(this)">
-                    <img src="https://readdy.ai/api/search-image?query=Kerala%20spice%20plantation%20with%20cardamom%2C%20pepper%2C%20cinnamon%20plants%2C%20rich%20colors%20of%20spices%2C%20workers%20harvesting%2C%20lush%20green%20environment%2C%20natural%20lighting%20through%20tree%20canopy%2C%20authentic%20agricultural%20scene%2C%20high-resolution%20photography&width=300&height=300&seq=9&orientation=squarish" alt="Spice Plantation" class="w-full h-64 object-cover object-top">
+                    <img src="https://files.yappe.in/place/small/palliyali-bakes-8091991.webp" alt="Spice Plantation" class="w-full h-64 object-cover object-top">
                 </div>
                 <div class="gallery-item rounded-lg overflow-hidden shadow-md" onclick="openModal(this)">
-                    <img src="https://readdy.ai/api/search-image?query=Traditional%20Kerala%20village%20morning%20scene%20with%20misty%20landscape%2C%20people%20starting%20daily%20activities%2C%20smoke%20from%20kitchen%20chimneys%2C%20golden%20sunrise%20light%2C%20peaceful%20atmosphere%2C%20authentic%20rural%20life%2C%20high-resolution%20photography&width=300&height=300&seq=10&orientation=squarish" alt="Village Morning" class="w-full h-64 object-cover object-top">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRB4N2-vN2DLg7xmzEfqm3mlwMI7aFcOe4yOg&s" alt="Village Morning" class="w-full h-64 object-cover object-top">
                 </div>
                 <div class="gallery-item rounded-lg overflow-hidden shadow-md" onclick="openModal(this)">
-                    <img src="https://readdy.ai/api/search-image?query=Kerala%20village%20children%20playing%20traditional%20games%20in%20courtyard%2C%20joyful%20expressions%2C%20natural%20setting%2C%20warm%20afternoon%20light%2C%20authentic%20childhood%20experience%2C%20cultural%20heritage%2C%20high-resolution%20photography&width=300&height=300&seq=11&orientation=squarish" alt="Village Children" class="w-full h-64 object-cover object-top">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZ443bpjgU-IAIFzNp6lZTr9i4IULwThOzhpaEISxi-ddzXNG28CrPYXKfhvEBGL3umC8&usqp=CAU" alt="Village Children" class="w-full h-64 object-cover object-top">
                 </div>
                 <div class="gallery-item rounded-lg overflow-hidden shadow-md" onclick="openModal(this)">
-                    <img src="https://readdy.ai/api/search-image?query=Traditional%20Kerala%20fishing%20with%20Chinese%20fishing%20nets%20at%20sunset%2C%20silhouettes%20against%20orange%20sky%2C%20reflections%20in%20water%2C%20fishermen%20at%20work%2C%20coastal%20village%20scene%2C%20dramatic%20lighting%2C%20high-resolution%20photography&width=300&height=300&seq=12&orientation=squarish" alt="Traditional Fishing" class="w-full h-64 object-cover object-top">
+                    <img src="https://content.jdmagicbox.com/comp/malappuram/p1/9999px483.x483.230118031555.r9p1/catalogue/strikers-football-turf-oorakam-melmuri-malappuram-football-turf-grounds-S6kl8vjqSc.jpg" alt="Traditional Fishing" class="w-full h-64 object-cover object-top">
                 </div>
                 <div class="gallery-item rounded-lg overflow-hidden shadow-md" onclick="openModal(this)">
-                    <img src="https://readdy.ai/api/search-image?query=Kerala%20village%20festival%20with%20traditional%20music%20performance%2C%20drummers%20playing%20chenda%2C%20colorful%20costumes%2C%20crowd%20of%20spectators%2C%20vibrant%20atmosphere%2C%20cultural%20celebration%2C%20authentic%20rural%20setting%2C%20high-resolution%20photography&width=300&height=300&seq=13&orientation=squarish" alt="Village Festival" class="w-full h-64 object-cover object-top">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0QI8ts54zL_9ypisfrqoXLhzMbMPXMHIfwQ&s" alt="Village Festival" class="w-full h-64 object-cover object-top">
                 </div>
             </div>
         </div>
@@ -512,9 +1214,10 @@ button:hover {
 
     <!-- Modal for Gallery -->
     <div id="imageModal" class="modal">
-        <span class="close" onclick="closeModal()">&times;</span>
+        <span class="close" onclick="closeModal()">×</span>
         <img class="modal-content" id="modalImage">
     </div>
+
     <!-- Contact Section -->
     <section id="contact" class="py-20 bg-gray-100">
         <div class="container mx-auto px-4">
@@ -523,7 +1226,6 @@ button:hover {
                 <div class="w-24 h-1 bg-primary mx-auto mb-4"></div>
                 <p class="text-gray-700 max-w-2xl mx-auto">Have questions about visiting Pakkadappuraya? We're here to help you plan your perfect village experience.</p>
             </div>
-            
             <div class="flex flex-col md:flex-row gap-12">
                 <div class="md:w-1/2 bg-white p-8 rounded-lg shadow-md">
                     <h3 class="text-2xl font-semibold text-gray-800 mb-6">Get in Touch</h3>
@@ -544,12 +1246,9 @@ button:hover {
                             <label for="message" class="block text-gray-700 mb-2">Your Message</label>
                             <textarea id="message" rows="5" class="w-full px-4 py-2 rounded focus:ring-2 focus:ring-primary" placeholder="I'm interested in visiting your village..."></textarea>
                         </div>
-                    
-<button class="a">send message</button>
-
+                        <button class="a">Send Message</button>
                     </form>
                 </div>
-                
                 <div class="md:w-1/2">
                     <div class="bg-white p-8 rounded-lg shadow-md mb-8">
                         <h3 class="text-2xl font-semibold text-gray-800 mb-6">Visit Us</h3>
@@ -581,80 +1280,79 @@ button:hover {
                             </div>
                         </div>
                     </div>
-                    
                     <div class="bg-white rounded-lg shadow-md overflow-hidden h-64">
-                        <div><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7831.355085881322!2d75.95076078890938!3d11.062784785923574!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba64c512e1fd209%3A0x2ef883c943aac066!2sPakkadapuraya%2C%20Kerala!5e0!3m2!1sen!2sin!4v1747392251981!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7831.355085881322!2d75.95076078890938!3d11.062784785923574!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba64c512e1fd209%3A0x2ef883c943aac066!2sPakkadapuraya%2C%20Kerala!5e0!3m2!1sen!2sin!4v1747392251981!5m2!1sen!2sin" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-12">
-        <div class="container mx-auto px-4">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div>
-                    <h3 class="text-xl font-semibold mb-4">About Pakkadappuraya</h3>
-                    <p class="text-gray-300 mb-4">A traditional Kerala village offering authentic cultural experiences, homestays, and a glimpse into the rich heritage of God's Own Country.</p>
-                    <div class="flex space-x-4">
-                        <a href="#" class="w-10 h-10 flex items-center justify-center bg-primary rounded-full hover:bg-opacity-80">
-                            <i class="ri-facebook-fill"></i>
-                        </a>
-                        <a href="#" class="w-10 h-10 flex items-center justify-center bg-primary rounded-full hover:bg-opacity-80">
-                            <i class="ri-instagram-line"></i>
-                        </a>
-                        <a href="#" class="w-10 h-10 flex items-center justify-center bg-primary rounded-full hover:bg-opacity-80">
-                            <i class="ri-twitter-x-line"></i>
-                        </a>
-                        <a href="#" class="w-10 h-10 flex items-center justify-center bg-primary rounded-full hover:bg-opacity-80">
-                            <i class="ri-youtube-line"></i>
-                        </a>
-                    </div>
+
+   
+    
+    <!-- Footer Start -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-content">
+                <!-- About Section -->
+                <div class="footer-section">
+                    <h3>About Us</h3>
+                    <p>Your Company Name is dedicated to providing high-quality products/services to our customers. We strive for excellence in everything we do.</p>
                 </div>
                 
-                <div>
-                    <h3 class="text-xl font-semibold mb-4">Quick Links</h3>
-                    <ul class="space-y-2">
-                        <li><a href="#" class="text-gray-300 hover:text-white">Home</a></li>
-                        <li><a href="#about" class="text-gray-300 hover:text-white">About Us</a></li>
-                        <li><a href="#attractions" class="text-gray-300 hover:text-white">Village Attractions</a></li>
-                        <li><a href="#gallery" class="text-gray-300 hover:text-white">Gallery</a></li>
-                        <li><a href="#contact" class="text-gray-300 hover:text-white">Contact</a></li>
-                        <li><a href="#" class="text-gray-300 hover:text-white">Homestay Booking</a></li>
-                        <li><a href="#" class="text-gray-300 hover:text-white">Village Tours</a></li>
+                <!-- Links Section -->
+                <div class="footer-section">
+                    <h3>Useful Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#Home">Home</a></li>
+                        <li><a href="#Services">Services</a></li>
+                        <li><a href="#attractions">attractions</a></li>
+                        <li><a href="#About">About</a></li>
+                        <li><a href="#Contact">Contact</a></li>
                     </ul>
                 </div>
                 
-                <div>
-                    <h3 class="text-xl font-semibold mb-4">Newsletter</h3>
-                    <p class="text-gray-300 mb-4">Subscribe to our newsletter for updates on village events and special offers.</p>
-                    <div class="flex">
-                        <input type="email" placeholder="Your email address" class="px-4 py-2 w-full rounded-l border-none text-gray-800">
-                        <button class="bg-primary hover:bg-opacity-90 px-4 py-2 rounded-r !rounded-button whitespace-nowrap">Subscribe</button>
+                <!-- Contact Section -->
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <p><i class="fa fa-map-marker"></i>pakkadappuraya village</p>
+                    <p><i class="fa fa-phone"></i> 8089603101</p>
+                    <p><i class="fa fa-envelope"></i> pakkadappuraya@.com</p>
+                    <div class="social-links">
+                        <a href="#"><i class="bi bi-facebook"></i></a>
+                        <a href="#"><i class="bi bi-whatsapp"></i></a>
+                        <a href="#"><i class="bi bi-instagram"></i></a>
+                        <a href="#"><i class="bi bi-twitter" ></i></a>
                     </div>
+                </div>
+                
+                <!-- Newsletter Section -->
+                <div class="footer-section">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe to our newsletter for updates and promotions.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Enter your email">
+                        <!-- From Uiverse.io by vinodjangid07 --> 
+<!-- From Uiverse.io by Awadhesh684827 --> 
+<a class="btn-glitch-fill">
+  <span class="text">// Hover me</span><span class="text-decoration"> _</span
+  ><span class="decoration">⇒</span>
+</a>
+
+                    </form>
                 </div>
             </div>
             
-            <div class="border-t border-gray-700 mt-12 pt-8 text-center text-gray-400">
-                <p>&copy; 2025 Pakkadappuraya Village Tourism. All rights reserved.</p>
-                <div class="flex justify-center mt-4 space-x-6">
-                    <div class="w-8 h-8 flex items-center justify-center">
-                        <i class="ri-visa-line ri-lg"></i>
-                    </div>
-                    <div class="w-8 h-8 flex items-center justify-center">
-                        <i class="ri-mastercard-line ri-lg"></i>
-                    </div>
-                    <div class="w-8 h-8 flex items-center justify-center">
-                        <i class="ri-paypal-line ri-lg"></i>
-                    </div>
-                    <div class="w-8 h-8 flex items-center justify-center">
-                        <i class="ri-amazon-pay-line ri-lg"></i>
-                    </div>
-                </div>
-            </div>
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <p>&copy; 2025 Your Company Name. All Rights Reserved.</p>
+                <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+            </div>       
         </div>
     </footer>
+
+   
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
@@ -665,8 +1363,15 @@ button:hover {
             mobileMenuButton.addEventListener('click', function() {
                 mobileMenu.classList.toggle('hidden');
             });
+
+            // Close mobile menu when a link is clicked
+            mobileMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                });
+            });
         });
-        
+
         // Gallery modal functionality
         function openModal(element) {
             const modal = document.getElementById('imageModal');
@@ -674,25 +1379,18 @@ button:hover {
             modal.style.display = "flex";
             modalImg.src = element.querySelector('img').src;
         }
-        
+
         function closeModal() {
             document.getElementById('imageModal').style.display = "none";
         }
+
+        // Close modal when clicking outside the image
+        document.getElementById('imageModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal();
+            }
+        });
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
-</html>
-
-
-
-
-
-
-
-
-
-
-
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
-</body>
-</html>
+            </html>
